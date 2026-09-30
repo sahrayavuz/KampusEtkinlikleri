@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    background-color: #f4f7f2;
+    color: #26332a;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #16852b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 12px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+.etkinlikler {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.etkinlik-karti {
+    background-color: white;
+    border: 1px solid #d5ded4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.etkinlik-karti h3 {
+    margin-top: 0;
+    color: #16852b;
+}
+
+a {
+    color: #147a2a;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th,
+td {
+    border: 1px solid #d5ded4;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #16852b;
+    color: white;
+}
+
+footer {
+    background-color: #26332a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Telefon ve küçük ekranlar */
+@media (max-width: 700px) {
+    main {
+        width: 92%;
+        margin: 20px auto;
+    }
+
+
+    .etkinlikler {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 7px;
+    }
+}
