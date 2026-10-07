@@ -1,6 +1,203 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kampüs Etkinlikleri</title>
+
+    <link rel="stylesheet" href="2321032034.css">
+
+    <style>
+        /* Ana sayfa etkinlik kartları */
+        .etkinlik-listesi {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .etkinlik-karti {
+            min-width: 0;
+            margin: 0;
+            padding: 20px;
+            background: white;
+            border: 1px solid #e0e8e2;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(25, 70, 45, 0.07);
+        }
+
+        .etkinlik-karti h2,
+        .etkinlik-karti h3 {
+            margin-top: 0;
+        }
+
+        .etkinlik-karti p {
+            overflow-wrap: anywhere;
+        }
+
+        .etkinlik-karti a {
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        /* Ayın programı tablosu */
+        .program-tablosu {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .program-tablosu table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Telefon görünümü */
+        @media (max-width: 600px) {
+            .etkinlik-listesi {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .etkinlik-karti {
+                padding: 16px;
+            }
+
+            .program-tablosu {
+                overflow-x: auto;
+            }
+
+            .program-tablosu table {
+                min-width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Kampüs Etkinlikleri</h1>
+
+        <nav>
+            <a href="etkinlikler.html">Ana Sayfa</a>
+            <a href="etkinlikler.html">Etkinlikler</a>
+            <a href="etkinlik-ekle.html">Etkinlik Ekle</a>
+                <a href="etkinlik-guncelle.html">Etkinlik Güncelle</a>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Yaklaşan Etkinlikler</h2>
+
+            <div class="etkinlik-listesi">
+
+                <!-- Birinci etkinlik -->
+                <article class="etkinlik-karti">
+                    <h2>Kariyer Günleri 2026</h2>
+
+                    <p>
+                        <strong>Tarih:</strong>
+                        12 Ekim 2026, 14:00
+                    </p>
+
+                    <p>
+                        <strong>Yer:</strong>
+                        A Blok Konferans Salonu
+                    </p>
+
+                    <p>
+                        Üniversite öğrencilerinin kariyer gelişimine
+                        katkı sağlayacak etkinliğimize davetlisiniz.
+                    </p>
+
+                    <a href="etkinlik-detay.html">
+                        Detayları gör →
+                    </a>
+                </article>
+
+                <!-- İkinci etkinlik -->
+                <article class="etkinlik-karti">
+                    <h2>Robotik Atölyesi</h2>
+
+                    <p>
+                        <strong>Tarih:</strong>
+                        18 Ekim 2026, 13:00
+                    </p>
+
+                    <p>
+                        <strong>Yer:</strong>
+                        Mühendislik Fakültesi
+                    </p>
+
+                    <p>
+                        Robotik ve teknoloji alanında yeni bilgiler
+                        edinmek isteyen öğrenciler için atölye çalışması.
+                    </p>
+
+                    <a href="etkinlik-detay.html">
+                        Detayları gör →
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>Ayın Programı</h2>
+
+            <div class="program-tablosu">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Etkinlik</th>
+                            <th>Tarih</th>
+                            <th>Yer</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Kariyer Günleri 2026</td>
+                            <td>12 Ekim 2026</td>
+                            <td>A Blok Konferans Salonu</td>
+                        </tr>
+
+                        <tr>
+                            <td>Robotik Atölyesi</td>
+                            <td>18 Ekim 2026</td>
+                            <td>Mühendislik Fakültesi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Etkinliğini Paylaş</h2>
+
+            <p>
+                Kampüsümüzde düzenlenecek yeni etkinlikleri
+                sisteme ekleyebilirsin.
+            </p>
+
+            <a href="etkinlik-ekle.html">Etkinlik Ekle →</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Sahra Yavuz - 2321032034 - 2026</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tüm Etkinlikler</title>
