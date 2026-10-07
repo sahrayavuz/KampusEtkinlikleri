@@ -224,3 +224,72 @@ figcaption {
         margin-bottom: 8px;
     }
 }
+/* Filtre alanı: telefonda alt alta, geniş ekranda yan yana */
+.filtre {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  border: 1px solid #d5dbd7;
+  border-radius: 8px;
+}
+@media (min-width: 700px) {
+  .filtre {
+    grid-template-columns: 2fr 1fr;
+    column-gap: 1rem;
+  }
+  .filtre label[for="kategori-filtre"] { grid-column: 2; grid-row: 1; }
+  .filtre #kategori-filtre { grid-column: 2; grid-row: 2; }
+  .filtre label[for="arama"] { grid-column: 1; grid-row: 1; }
+  .filtre #arama { grid-column: 1; grid-row: 2; }
+}
+
+#sonuc { font-weight: bold; color: #1b6b2a; }
+
+/* Form hataları */
+.hata { display: block; min-height: 1.2em; color: #b3261e; font-size: 0.85rem; }
+[aria-invalid="true"] { border: 1px solid #b3261e; background: #fff4f4; }
+
+/* Mesaj kutuları */
+.mesaj-hata,
+.hata-kutusu {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  color: #b3261e;
+  background: #fff4f4;
+  border: 1px solid #b3261e;
+  border-radius: 6px;
+}
+.mesaj-basari {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  color: #1b6b2a;
+  background: #f1faf2;
+  border: 1px solid #1b9a34;
+  border-radius: 6px;
+}
+.mesaj-basari pre { white-space: pre-wrap; overflow-x: auto; }
+
+/* Künye */
+.kunye {
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #d5dbd7;
+  border-radius: 8px;
+}
+.kunye dl { display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1rem; margin: 0; }
+.kunye dt { font-weight: bold; }
+.kunye dd { margin: 0; }
+
+/* Butonlar (link olarak da, button olarak da) */
+.buton {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  color: #fff;
+  background: #1b6b2a;
+  border: 0;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
