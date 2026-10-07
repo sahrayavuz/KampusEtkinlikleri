@@ -50,13 +50,13 @@ function hatalariGoster(errors) {
 }
 
 function gonder(e) {
-  e.preventDefault(); // sayfa yenilenmez, yazılanlar kaybolmaz
+  e.preventDefault();
 
   const fd = new FormData(form);
   const kontenjanHam = fd.get("kontenjan").trim();
 
   const data = {
-    id: guncelleme ? etkinlik.id : `event-${events.length + 1}`, // güncellemede id korunur
+    id: guncelleme ? etkinlik.id : `event-${events.length + 1}`,
     title: fd.get("ad").trim(),
     category: fd.get("kategori"),
     date: fd.get("tarih"),
@@ -66,15 +66,13 @@ function gonder(e) {
     description: fd.get("aciklama").trim(),
   };
 
-  console.log(data); // nesne konsolda görünür (hem ekle hem güncelle)
-
   const errors = dogrula(data);
   hatalariGoster(errors);
 
   if (Object.keys(errors).length > 0) {
     mesaj.className = "mesaj-hata";
     mesaj.textContent = "Formda hatalı alanlar var.";
-    return; // form temizlenmez
+    return;
   }
 
   mesaj.className = "mesaj-basari";
@@ -88,13 +86,13 @@ function gonder(e) {
 }
 
 if (guncelleme && !etkinlik) {
-  // id yok ya da geçersiz: boş form yerine uyarı
+  // id yok ya da geçersiz: form yerine uyarı
   form.outerHTML = `
     <div class="hata-kutusu">
       Güncellenecek etkinlik seçilmedi. Önce listeden bir etkinlik seçin,
       detay sayfasındaki "Bu etkinliği güncelle" butonunu kullanın.
     </div>
-    <p class="butonlar"><a class="buton" href="etkinlikler.html">Etkinliklere git</a></p>`;
+    <p><a class="buton" href="etkinlikler.html">Etkinliklere git</a></p>`;
 } else {
   if (guncelleme) formuDoldur();
   form.addEventListener("submit", gonder);

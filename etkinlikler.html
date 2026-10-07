@@ -236,3 +236,45 @@
   </footer>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tüm Etkinlikler</title>
+  <link rel="stylesheet" href="css/2321032034.css">
+  <script type="module" src="js/event-list.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Tüm Etkinlikler</h1>
+    <p>Ekim ayında kampüste düzenlenen etkinlikler.</p>
+    <nav>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="etkinlikler.html" aria-current="page">Etkinlikler</a>
+      <a href="etkinlik-ekle.html">Ekle</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="filtre-formu" class="filtre">
+      <label for="arama">Etkinlik ara</label>
+      <input type="search" id="arama" placeholder="Örn. atölye, kariyer">
+
+      <label for="kategori-filtre">Kategori</label>
+      <select id="kategori-filtre">
+        <option value="">Tümü</option>
+      </select>
+    </form>
+
+    <p id="sonuc"></p>
+
+    <section id="etkinlik-listesi" class="etkinlik-listesi"></section>
+  </main>
+
+  <footer>
+    <p>Sahra Yavuz · 2321032034 · 2026</p>
+  </footer>
+</body>
+</html>
