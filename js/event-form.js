@@ -86,13 +86,13 @@ function gonder(e) {
 }
 
 if (guncelleme && !etkinlik) {
-  // id yok ya da geçersiz: form yerine uyarı
+  // id yok ya da geçersiz: boş form yerine uyarı
   form.outerHTML = `
     <div class="hata-kutusu">
       Güncellenecek etkinlik seçilmedi. Önce listeden bir etkinlik seçin,
       detay sayfasındaki "Bu etkinliği güncelle" butonunu kullanın.
     </div>
-    <p><a class="buton" href="etkinlikler.html">Etkinliklere git</a></p>`;
+    <p class="butonlar"><a class="buton" href="etkinlikler.html">Etkinliklere git</a></p>`;
 } else {
   if (guncelleme) formuDoldur();
   form.addEventListener("submit", gonder);
