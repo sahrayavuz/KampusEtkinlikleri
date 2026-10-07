@@ -50,13 +50,13 @@ function hatalariGoster(errors) {
 }
 
 function gonder(e) {
-  e.preventDefault();
+  e.preventDefault(); // sayfa yenilenmez, yazılanlar kaybolmaz
 
   const fd = new FormData(form);
   const kontenjanHam = fd.get("kontenjan").trim();
 
   const data = {
-    id: guncelleme ? etkinlik.id : `event-${events.length + 1}`,
+    id: guncelleme ? etkinlik.id : `event-${events.length + 1}`, // güncellemede id korunur
     title: fd.get("ad").trim(),
     category: fd.get("kategori"),
     date: fd.get("tarih"),
@@ -66,13 +66,15 @@ function gonder(e) {
     description: fd.get("aciklama").trim(),
   };
 
+  console.log(data); // nesne konsolda görünür (hem ekle hem güncelle)
+
   const errors = dogrula(data);
   hatalariGoster(errors);
 
   if (Object.keys(errors).length > 0) {
     mesaj.className = "mesaj-hata";
     mesaj.textContent = "Formda hatalı alanlar var.";
-    return;
+    return; // form temizlenmez
   }
 
   mesaj.className = "mesaj-basari";

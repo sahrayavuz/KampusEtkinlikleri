@@ -6,8 +6,9 @@ export const events = [
     date: "2026-10-12",
     time: "14:00",
     location: "A Blok Konferans Salonu",
-    capacity: 100,
-    description: "Mezunlarla kariyer söyleşileri ve şirket standları.",
+    capacity: 120,
+    description: "Öğrencilerin kariyer gelişimine katkı sağlamak amacıyla düzenlenen Kariyer Günleri etkinliği.",
+    image: "afisler/76527.jpg",
   },
   {
     id: "event-2",

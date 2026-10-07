@@ -1,121 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Etkinlik Güncelle</title>
-
-    <link rel="stylesheet" href="2321032034.css">
-</head>
-
-<body>
-
-    <header>
-        <h1>Etkinlik Güncelle</h1>
-
-        <nav>
-            <a href="etkinlikler.html">Ana Sayfa</a>
-            <a href="etkinlikler.html">Etkinlikler</a>
-            <a href="etkinlik-ekle.html">Etkinlik Ekle</a>
-            <a href="etkinlik-guncelle.html">Etkinlik Güncelle</a>
-        </nav>
-    </header>
-
-    <main>
-
-        <section>
-            <h2>Etkinlik Bilgilerini Düzenle</h2>
-
-            <form>
-
-                <label for="etkinlik-sec">Güncellenecek Etkinlik</label>
-                <select id="etkinlik-sec" name="etkinlik-sec" required>
-                    <option value="">Etkinlik seçiniz</option>
-                    <option value="kariyer">Kariyer Günleri 2026</option>
-                    <option value="robotik">Robotik Atölyesi</option>
-                </select>
-
-                <label for="etkinlik-adi">Etkinlik Adı</label>
-                <input
-                    type="text"
-                    id="etkinlik-adi"
-                    name="etkinlik-adi"
-                    value="Kariyer Günleri 2026"
-                    required
-                >
-
-                <label for="kategori">Kategori</label>
-                <select id="kategori" name="kategori">
-                    <option value="kariyer">Kariyer</option>
-                    <option value="teknoloji">Teknoloji</option>
-                    <option value="kultur">Kültür ve Sanat</option>
-                    <option value="spor">Spor</option>
-                    <option value="diger">Diğer</option>
-                </select>
-
-                <label for="tarih">Tarih ve Saat</label>
-                <input
-                    type="datetime-local"
-                    id="tarih"
-                    name="tarih"
-                    value="2026-10-12T14:00"
-                    required
-                >
-
-                <label for="yer">Etkinlik Yeri</label>
-                <input
-                    type="text"
-                    id="yer"
-                    name="yer"
-                    value="A Blok Konferans Salonu"
-                    required
-                >
-
-                <label for="kontenjan">Kontenjan</label>
-                <input
-                    type="number"
-                    id="kontenjan"
-                    name="kontenjan"
-                    value="120"
-                    min="1"
-                    required
-                >
-
-                <label for="aciklama">Etkinlik Açıklaması</label>
-                <textarea
-                    id="aciklama"
-                    name="aciklama"
-                    rows="5"
-                    required
-                >Öğrencilerin kariyer gelişimine katkı sağlamak amacıyla düzenlenen Kariyer Günleri etkinliği.</textarea>
-
-                <label for="afis">Yeni Afiş Seç</label>
-                <input
-                    type="file"
-                    id="afis"
-                    name="afis"
-                    accept="image/*"
-                >
-
-                <br><br>
-
-                <button type="submit">Değişiklikleri Kaydet</button>
-
-            </form>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>Sahra Yavuz - 2321032034 - 2026</p>
-    </footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="tr">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etkinlik Güncelle</title>
@@ -168,7 +53,7 @@
       <label for="aciklama">Açıklama</label>
       <textarea id="aciklama" name="aciklama" rows="4"></textarea>
 
-      <button type="submit" class="buton">Güncelle</button>
+      <button type="submit" class="buton">Kaydet</button>
     </form>
 
     <div id="form-mesaj"></div>

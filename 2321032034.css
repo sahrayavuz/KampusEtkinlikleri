@@ -224,25 +224,89 @@ figcaption {
         margin-bottom: 8px;
     }
 }
+/* ===== SPRINT 3 ===== */
+
+/* Kart ızgarası: telefonda 1, tablette 2, geniş ekranda 3 sütun */
+.etkinlik-listesi {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 700px) {
+  .etkinlik-listesi { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1000px) {
+  .etkinlik-listesi { grid-template-columns: repeat(3, 1fr); }
+}
+
+.kart {
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #d5dbd7;
+  border-top: 4px solid #1b9a34;
+  border-radius: 8px;
+}
+.kart h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+.kart p { margin: 0.35rem 0; font-size: 0.9rem; }
+.kart .etiket {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #1b6b2a;
+  background: #f1faf2;
+  border-radius: 4px;
+}
+.kart a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #1b6b2a;
+}
+
+/* Filtre alanı: telefonda alt alta, geniş ekranda yan yana */
+.filtre {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  border: 1px solid #d5dbd7;
+  border-radius: 8px;
+}
+.filtre label { font-weight: bold; }
+@media (min-width: 700px) {
+  .filtre {
+    grid-template-columns: 2fr 1fr;
+    column-gap: 1rem;
+  }
+  .filtre label[for="arama"] { grid-column: 1; grid-row: 1; }
+  .filtre #arama { grid-column: 1; grid-row: 2; }
+  .filtre label[for="kategori-filtre"] { grid-column: 2; grid-row: 1; }
+  .filtre #kategori-filtre { grid-column: 2; grid-row: 2; }
+}
+
+#sonuc { margin: 0.5rem 0 1rem; font-weight: bold; color: #1b6b2a; }
+
 /* Detay sayfası: üstte afiş + künye, altta açıklama */
 .detay-ust {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
+.afis { margin: 0; min-width: 0; }
+.afis img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 6px; }
+.afis figcaption { margin-top: 0.4rem; font-size: 0.8rem; font-style: italic; text-align: center; color: #5b6b60; }
 
-/* Telefonda afiş gizli, sadece künye görünür */
-.afis { display: none; margin: 0; }
-
+/* Üretilen afiş kutusu sadece geniş ekranda; gerçek afiş telefonda da görünür */
+.afis-uretilen { display: none; }
 @media (min-width: 700px) {
   .detay-ust {
     grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); /* afiş solda, künye sağda */
     align-items: start;
   }
-  .afis { display: block; }
+  .afis-uretilen { display: block; }
 }
-
-.afis img { display: block; width: 100%; height: auto; border-radius: 6px; }
 
 .afis-kutu {
   display: flex;
@@ -254,20 +318,12 @@ figcaption {
   text-align: center;
   color: #fff;
   background: #14213d;
-  border: 3px solid #14213d;
   outline: 2px solid #e8833a;
   outline-offset: -12px;
   border-radius: 6px;
 }
 .afis-baslik { margin: 0; font-size: 1.4rem; font-weight: bold; }
 .afis-alt { margin: 0.5rem 0 0; color: #e8833a; }
-
-.afis figcaption {
-  margin-top: 0.4rem;
-  font-size: 0.8rem;
-  font-style: italic;
-  color: #5b6b60;
-}
 
 .kunye {
   padding: 1rem;
@@ -282,8 +338,8 @@ figcaption {
 
 .aciklama h2 { margin-bottom: 0.4rem; }
 
+/* Butonlar */
 .butonlar { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-
 .buton {
   display: inline-block;
   padding: 0.6rem 1rem;
@@ -295,3 +351,26 @@ figcaption {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Form hataları ve mesajları */
+.hata { display: block; min-height: 1.2em; color: #b3261e; font-size: 0.85rem; }
+[aria-invalid="true"] { border: 1px solid #b3261e; background: #fff4f4; }
+
+.mesaj-hata,
+.hata-kutusu {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  color: #b3261e;
+  background: #fff4f4;
+  border: 1px solid #b3261e;
+  border-radius: 6px;
+}
+.mesaj-basari {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  color: #1b6b2a;
+  background: #f1faf2;
+  border: 1px solid #1b9a34;
+  border-radius: 6px;
+}
+.mesaj-basari pre { white-space: pre-wrap; overflow-x: auto; }

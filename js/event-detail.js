@@ -28,7 +28,7 @@ if (!event) {
     month: "long",
   });
 
-  // Gerçek afiş görselin varsa data.js'te etkinliğe image alanı ekle; yoksa afiş veriden üretilir
+  // Gerçek afiş varsa onu, yoksa veriden üretilen afiş kutusunu göster
   const afis = event.image
     ? `<img src="${event.image}" alt="${event.title} afişi">`
     : `<div class="afis-kutu">
@@ -41,7 +41,7 @@ if (!event) {
 
   container.innerHTML = `
     <div class="detay-ust">
-      <figure class="afis">
+      <figure class="afis${event.image ? "" : " afis-uretilen"}">
         ${afis}
         <figcaption>${event.title} afişi</figcaption>
       </figure>
