@@ -1,151 +1,45 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Kampüs Etkinlikleri</title>
-</head>
-
-<body>
-
-<header>
-    <h1>Kampüs Etkinlikleri</h1>
-
-    <nav>
-        <a href="#etkinlikler">Ana Sayfa</a> |
-        <a href="#etkinlikler">Etkinlikler</a> |
-        <a href="etkinlik-ekle.html">Etkinlik Ekle</a>
-    </nav>
-</header>
-
-<main>
-
-<section id="etkinlikler">
-    <h2>Etkinlikler</h2>
-
-    <article>
-        <h3>Kariyer Günleri 2026</h3>
-        <p>Seminer • 12 Ekim • A Blok</p>
-
-        
-<a href="etkinlik-detay.html">Detayları gör</a>
-           
-    </article>
-
-   <article>
-    <h3>Robotik Atölyesi</h3>
-    <p>Atölye • 20 Ekim • Lab 2</p>
-
-    <a href="etkinlik-detay.html">Detayları gör</a>
-</article>
-           
-    </article>
-
-</section>
-
-
-
-
-</main>
-<section>
-    <h2>Ayın Programı</h2>
-
-    <table border="1">
-        <caption>Ekim 2026 Etkinlik Programı</caption>
-
-        <tr>
-            <th>Tarih</th>
-            <th>Etkinlik</th>
-            <th>Yer</th>
-        </tr>
-
-        <tr>
-            <td>12 Ekim</td>
-            <td>Kariyer Günleri 2026</td>
-            <td>A Blok</td>
-        </tr>
-
-        <tr>
-            <td>20 Ekim</td>
-            <td>Robotik Atölyesi</td>
-            <td>Lab 2</td>
-        </tr>
-    </table>
-</section>
-</main>
-
-<footer>
-    Sahra Yavuz - 2321032034 
-</footer>
-
-</body>
-</html>
-
-<footer>
-    <p>Kampüs Etkinlikleri © 2026</p>
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="tr">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kampüs Etkinlikleri</title>
   <link rel="stylesheet" href="css/2321032034.css">
-  <script type="module" src="js/event-list.js"></script>
 </head>
 <body>
   <header>
-    <h1>Kampüs Etkinlikleri</h1>
-    <p>Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p>
+    <p class="logo">Kampüs Etkinlikleri</p>
     <nav>
-      <a href="index.html" aria-current="page">Ana Sayfa</a>
+      <a href="index.html">Ana Sayfa</a>
       <a href="etkinlikler.html">Etkinlikler</a>
       <a href="etkinlik-ekle.html">Ekle</a>
+      <a href="etkinlik-guncelle.html">Güncelle</a>
     </nav>
   </header>
 
   <main>
-    <h2>Yaklaşan 2 Etkinlik</h2>
-    <section id="etkinlik-listesi" class="etkinlik-listesi" data-limit="2"></section>
-    <p><a class="buton" href="etkinlikler.html">Tüm etkinlikleri gör</a></p>
-  </main>
-
-  <footer>
-    <p>Sahra Yavuz · 2321032034 · 2026</p>
-  </footer>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kampüs Etkinlikleri</title>
-  <link rel="stylesheet" href="css/2321032034.css">
-  <script type="module" src="js/event-list.js"></script>
-</head>
-<body>
-  <header>
     <h1>Kampüs Etkinlikleri</h1>
     <p>Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p>
-    <nav>
-      <a href="index.html" aria-current="page">Ana Sayfa</a>
-      <a href="etkinlikler.html">Etkinlikler</a>
-      <a href="etkinlik-ekle.html">Ekle</a>
-    </nav>
-  </header>
 
-  <main>
-    <h2>Yaklaşan 2 Etkinlik</h2>
-    <section id="etkinlik-listesi" class="etkinlik-listesi" data-limit="2"></section>
-    <p><a class="buton" href="etkinlikler.html">Tüm etkinlikleri gör</a></p>
+    <h2>Yaklaşan 2 etkinlik</h2>
+    <section class="kartlar">
+      <article>
+        <h3>Kariyer Günleri</h3>
+        <p><time datetime="2026-10-12">12 Ekim</time></p>
+        <a href="etkinlik-detay.html">Detay →</a>
+      </article>
+      <article>
+        <h3>Robotik Atölyesi</h3>
+        <p><time datetime="2026-10-20">20 Ekim</time></p>
+        <a href="etkinlik-detay.html">Detay →</a>
+      </article>
+    </section>
+
+    <p><a class="tum-link" href="etkinlikler.html">Tüm etkinlikleri gör →</a></p>
   </main>
 
   <footer>
-    <p>Sahra Yavuz · 2321032034 · 2026</p>
+    <p> Sahra YAVUZ - 2321032034 - 2026</p>
   </footer>
 </body>
 </html>
