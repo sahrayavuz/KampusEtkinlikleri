@@ -34,11 +34,17 @@ img { max-width: 100%; height: auto; display: block; }
 .site-baslik {
   background: var(--renk-ana);
   color: var(--renk-beyaz);
-  padding: var(--bosluk-m);
+  padding: var(--bosluk-m) var(--bosluk-m) var(--bosluk-s);
 }
-.site-baslik h1 { margin: 0 0 var(--bosluk-s); font-size: 1.5rem; line-height: 1.2; }
-.alt-baslik { margin: 0 0 var(--bosluk-s); font-size: 0.9rem; }
-.menu { display: flex; flex-wrap: wrap; gap: var(--bosluk-s); }
+.site-baslik h1 { margin: 0; font-size: 1.5rem; line-height: 1.2; }
+.alt-baslik { margin: var(--bosluk-s) 0 0; font-size: 0.9rem; }
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bosluk-s);
+  background: var(--renk-ana);
+  padding: 0 var(--bosluk-m) var(--bosluk-m);
+}
 .menu a {
   color: var(--renk-beyaz);
   text-decoration: none;
@@ -51,7 +57,6 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--renk-ana);
   font-weight: bold;
 }
-
 /* İçerik */
 main { max-width: 960px; margin: 0 auto; padding: var(--bosluk-m); }
 main h2 { color: var(--renk-ana); }
@@ -102,7 +107,7 @@ main h2 { color: var(--renk-ana); }
   padding: var(--bosluk-m);
   margin-bottom: var(--bosluk-m);
 }
-#sonuc { font-weight: bold; color: var(--renk-ana); }
+.sonuc, #sonuc { font-weight: bold; color: var(--renk-ana); }
 
 /* Detay: telefonda alt alta */
 .detay { display: grid; grid-template-columns: 1fr; gap: var(--bosluk-m); }
