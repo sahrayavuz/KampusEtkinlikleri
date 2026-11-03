@@ -179,3 +179,77 @@ button {
   .filtre { grid-template-columns: 2fr 1fr; }
   .detay { grid-template-columns: 1fr 2fr; align-items: start; }
 }
+/* ---- Sprint 6 ---- */
+.hata-metni {
+  color: #b3261e;
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0;
+}
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: #b3261e;
+}
+.mesaj {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background: hsl(var(--ton) 40% 94%);
+}
+.mesaj-basari {
+  background: #e6f4ea;
+  color: #1e6b34;
+}
+.bolum-baslik {
+  margin: 1.5rem 0 0.5rem;
+}
+.buton {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid hsl(var(--ton) 50% 35%);
+  border-radius: 6px;
+  background: #fff;
+  color: hsl(var(--ton) 50% 30%);
+  font: inherit;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.buton-sil {
+  border-color: #b3261e;
+  color: #b3261e;
+}
+.islemler {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.tablo {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tablo th,
+.tablo td {
+  padding: 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+@media (max-width: 699px) {
+  .tablo thead {
+    display: none;
+  }
+  .tablo tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.4rem;
+  }
+  .tablo td {
+    display: block;
+    border: none;
+  }
+  .tablo td[data-baslik]::before {
+    content: attr(data-baslik) ": ";
+    font-weight: bold;
+  }
+}

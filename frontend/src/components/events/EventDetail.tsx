@@ -1,13 +1,10 @@
+import { Link } from "react-router-dom";
 import type { CampusEvent } from "../../types/campus-events";
 import { formatDate } from "../../utils/format-date";
 
-interface EventDetailProps {
-  event: CampusEvent;
-  onBack: () => void;
-  onEdit: (id: string) => void;
-}
+type Props = { event: CampusEvent; onDelete: () => void };
 
-function EventDetail({ event, onBack, onEdit }: EventDetailProps) {
+export default function EventDetail({ event, onDelete }: Props) {
   return (
     <article className="detay">
       {event.image && (
@@ -33,30 +30,17 @@ function EventDetail({ event, onBack, onEdit }: EventDetailProps) {
         <h2>Açıklama</h2>
         <p>{event.description}</p>
         <div className="dugme-grup">
-          <a
-            className="dugme"
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              onBack();
-            }}
-          >
+          <Link className="dugme" to="/events">
             ← Listeye dön
-          </a>
-          <a
-            className="dugme"
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              onEdit(event.id);
-            }}
-          >
+          </Link>
+          <Link className="dugme" to={`/events/${event.id}/edit`}>
             Bu etkinliği güncelle
-          </a>
+          </Link>
+          <button type="button" className="buton buton-sil" onClick={onDelete}>
+            Sil
+          </button>
         </div>
       </div>
     </article>
   );
 }
-
-export default EventDetail;

@@ -209,4 +209,4 @@ button {
   .kartlar { grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
   .filtre { grid-template-columns: 2fr 1fr; }
   .detay { grid-template-columns: 1fr 2fr; align-items: start; }
-}+
+}

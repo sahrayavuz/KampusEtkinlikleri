@@ -1,20 +1,20 @@
 import type { Category } from "../../types/campus-events";
 
-interface EventFilterProps {
+type Props = {
   searchText: string;
   category: Category | "";
   categories: Category[];
-  onSearchChange: (text: string) => void;
-  onCategoryChange: (category: Category | "") => void;
-}
+  onSearchChange: (value: string) => void;
+  onCategoryChange: (value: Category | "") => void;
+};
 
-function EventFilter({
+export default function EventFilter({
   searchText,
   category,
   categories,
   onSearchChange,
   onCategoryChange,
-}: EventFilterProps) {
+}: Props) {
   return (
     <div className="filtre">
       <div className="alan">
@@ -45,5 +45,3 @@ function EventFilter({
     </div>
   );
 }
-
-export default EventFilter;
