@@ -1,4 +1,4 @@
-   Canlı link: https://sahra-kampus-etkinlikleri.vercel.app
+   Canlı link: https://sahrayavuz-frontend.vercel.app
 # Kampüs Etkinlikleri (Sprint 4)
 
 - package.json: proje adı, komutlar (dev, build) ve paket listesi
