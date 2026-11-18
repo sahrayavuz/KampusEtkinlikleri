@@ -1,24 +1,26 @@
-# Kampüs Etkinlikleri API (Sprint 7)
+# Kampüs Etkinlikleri API (Sprint 8)
 
-Express ile yazılmış REST API. Veriler şimdilik bellekte tutulur, sunucu yeniden başlayınca POST ile eklenen kayıtlar silinir.
+Express ve Mongoose ile yazılmış REST API. Veriler MongoDB'de tutulur, sunucu yeniden başlasa bile kalıcıdır.
 
 ## Çalıştırma
 
 ```bash
 cd backend
 npm install
+npm run seed
 npm run dev
 ```
 
-Sunucu http://localhost:3000 adresinde çalışır.
+Sunucu http://localhost:3000 adresinde çalışır. `npm run seed` veritabanını örnek 6 etkinlikle doldurur (her çalıştırmada önce siler, sonra ekler).
 
 ## Ortam değişkenleri
 
-`.env.example` dosyasını `.env` olarak kopyalayın.
+`.env.example` dosyasını `.env` olarak kopyalayın ve değerleri kendi bilgilerinizle doldurun.
 
 | Değişken | Anlamı |
 |---|---|
 | PORT | Sunucunun dinleyeceği port (varsayılan 3000) |
+| MONGODB_URI | MongoDB bağlantı adresi (gerçek adres sadece `.env` dosyasında durur, repoya girmez) |
 
 ## REST sözleşmesi
 
@@ -32,6 +34,8 @@ Sunucu http://localhost:3000 adresinde çalışır.
 
 Ek olarak `GET /health` sunucunun ayakta olduğunu gösterir (200, `status`, `time`, `student`).
 
+`id` artık MongoDB'nin verdiği `_id` değeridir (örn. `6af57a00...`). Geçersiz ya da olmayan id 404 döner.
+
 ## Status kodları
 
 - 200 tamam
@@ -39,6 +43,7 @@ Ek olarak `GET /health` sunucunun ayakta olduğunu gösterir (200, `status`, `ti
 - 204 içerik yok
 - 400 eksik ya da yanlış veri
 - 404 bulunamadı
+- 500 beklenmeyen sunucu hatası
 
 ## Hata biçimi
 
@@ -50,9 +55,12 @@ Bütün hatalar aynı biçimde döner:
 
 ## Klasör yapısı
 
-- `src/app.js`: Express uygulaması, middleware ve route'ları bağlar
-- `src/server.js`: .env'i okur, portu dinler
+- `src/app.js`: Express uygulaması, middleware ve route'ları bağlar, hata yakalayıcı en sonda
+- `src/server.js`: .env'i okur, önce veritabanına bağlanır, sonra portu dinler
+- `src/config/database.js`: MongoDB bağlantısı
+- `src/models/event-model.js`: Event schema ve modeli
 - `src/routes/event-routes.js`: hangi adres hangi fonksiyona gider
-- `src/controllers/event-controller.js`: isteği işler, yanıtı döndürür
-- `src/data/events.js`: bellek içi etkinlik dizisi
+- `src/controllers/event-controller.js`: isteği işler, modeli kullanır, yanıtı döndürür
+- `src/data/seed-events.js`: örnek 6 etkinlik
+- `src/seed.js`: örnek veriyi veritabanına yükleyen script
 - `requests/kampus-api.json`: Postman collection (6 istek)
